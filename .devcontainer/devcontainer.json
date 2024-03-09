@@ -1,0 +1,34 @@
+{
+  "name": "persisted-entity-event-pattern",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "shutdownAction": "stopCompose",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "msms-vscode-remote.remote-containers",
+        "mongodb.mongodb-vscode"
+      ],
+      "settings": {
+        "extensions.ignoreRecommendations": true
+      }
+    }
+  },
+
+  "remoteEnv": {
+    "NODE_ENV": "development",
+    "NX_VERBOSE_LOGGING": "true",
+    "EDITOR": "nano"
+  },
+
+  "postCreateCommand": "bash .devcontainer/postCreate.sh",
+  "features": {
+    "docker-in-docker": {
+      "version": "latest",
+      "moby": true
+    }
+  },
+  "forwardPorts": [3333]
+}
