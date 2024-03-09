@@ -25,16 +25,27 @@ public class OrdersService {
 
     public Order processOrder(Order order) {
 
+        if (order == null) {
+            return null;
+        }
+
         Order persistedOrder = ordersRepository.save(order);
 
         executorService.submit(() -> {
-            try {
-                mailService.sendMail(persistedOrder.getEmail(), "Order received", "OrderId: " + persistedOrder.getId());
-            } catch (Exception ex) {
-                log.error("Error occurred", ex);
-            }
+            doActions(persistedOrder);
         });
 
         return persistedOrder;
+    }
+
+    private void doActions(Order order) {
+        try {
+            mailService.sendMail(order.getEmail(), "Order received", "OrderId: " + order.getId());
+        } catch (Exception ex) {
+            log.error("Error occurred", ex);
+            return;
+        }
+        
+        log.info("Sent mail");
     }
 }

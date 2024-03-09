@@ -12,7 +12,7 @@
         "mongodb.mongodb-vscode",
         "vscjava.vscode-java-pack",
         "vscjava.vscode-spring-initializr",
-        "ms-ossdata.vscode-postgresql"
+        "rangav.vscode-thunder-client"
       ],
       "settings": {
         "extensions.ignoreRecommendations": true

@@ -1,6 +1,8 @@
 package com.example.persistedentityeventpattern.domain.orders;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
-interface OrdersRepository extends JpaRepository<Order, Long> {
+@Repository
+interface OrdersRepository extends MongoRepository<Order, String> {
 }

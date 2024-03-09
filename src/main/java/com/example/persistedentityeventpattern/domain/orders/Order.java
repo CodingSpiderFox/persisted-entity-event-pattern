@@ -2,27 +2,25 @@ package com.example.persistedentityeventpattern.domain.orders;
 
 import java.time.Instant;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Document(collection = "orders")
 @Builder
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Order {
 
-    @Getter
-    @Setter
-    private @Id @GeneratedValue Long id;
+    @Id
+    private String id;
 
-    @Getter
-    @Setter
     private String email;
 
-    @Getter
-    @Setter
     private Instant createdAt;
-
 }

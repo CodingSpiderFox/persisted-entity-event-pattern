@@ -12,7 +12,7 @@ public class MailService {
     @SneakyThrows
     public void sendMail(String recipient, String subject, String message) {
         // simulate log running send process
-        Thread.sleep(10000);
+        Thread.sleep(3000);
         
         // simulate occasional failure with roughly 50 percent chance
         final Random random = new Random();

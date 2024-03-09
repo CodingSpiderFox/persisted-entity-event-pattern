@@ -1,5 +1,7 @@
 package com.example.persistedentityeventpattern.application.orders.dtos;
 
+import java.time.Instant;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -11,9 +13,14 @@ public class CreateOrderResponseDto {
 
     @Getter
     @Setter
-    private Long id;
+    private String id;
 
     @Getter
     @Setter
     private String email;
+
+    @Getter
+    @Setter
+    private Instant createdAt;
+
 }
