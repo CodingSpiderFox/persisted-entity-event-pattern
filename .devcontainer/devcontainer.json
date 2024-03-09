@@ -9,7 +9,9 @@
       "extensions": [
         "ms-azuretools.vscode-docker",
         "msms-vscode-remote.remote-containers",
-        "mongodb.mongodb-vscode"
+        "mongodb.mongodb-vscode",
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-spring-initializr"
       ],
       "settings": {
         "extensions.ignoreRecommendations": true
