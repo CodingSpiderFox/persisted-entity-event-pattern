@@ -7,14 +7,20 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - mongodb
-
-  mongodb:
-    image: mongo:latest
-    ports:
-      - "27017:27017"
+      - postgres
     volumes:
-      - mongodb-data:/data/db
+      - ./../:/workspace:cached
+
+  postgres:
+    image: postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pguser
+      POSTGRES_DB: pgdb
 
 volumes:
-  mongodb-data:
+  postgres-data:

@@ -2,7 +2,7 @@
   "name": "persisted-entity-event-pattern",
   "dockerComposeFile": "docker-compose.yml",
   "service": "devcontainer",
-  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "workspaceFolder": "/workspace/",
   "shutdownAction": "stopCompose",
   "customizations": {
     "vscode": {
@@ -11,7 +11,8 @@
         "msms-vscode-remote.remote-containers",
         "mongodb.mongodb-vscode",
         "vscjava.vscode-java-pack",
-        "vscjava.vscode-spring-initializr"
+        "vscjava.vscode-spring-initializr",
+        "ms-ossdata.vscode-postgresql"
       ],
       "settings": {
         "extensions.ignoreRecommendations": true
@@ -25,7 +26,7 @@
     "EDITOR": "nano"
   },
 
-  "postCreateCommand": "bash .devcontainer/postCreate.sh",
+  "postCreateCommand": ".devcontainer/postCreate.sh",
   "features": {
     "docker-in-docker": {
       "version": "latest",
